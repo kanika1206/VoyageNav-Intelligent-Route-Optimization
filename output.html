@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>India to Russia - Routes</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <style>
+    #map {
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <script>
+    // Initialize the map
+    var map = L.map('map').setView([40, 70], 4);
+
+    // Add OpenStreetMap tile layer (no key required)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Shortest route (Red): New Delhi → Moscow
+    var shortestCoords = [
+      [28.6139, 77.2090],  // New Delhi
+      [55.7558, 37.6173]   // Moscow
+    ];
+    L.polyline(shortestCoords, { color: 'red', weight: 4 })
+      .addTo(map)
+      .bindPopup("Shortest: New Delhi → Moscow (Flight)");
+
+    // Longest route (Blue): Delhi → Dhaka → Tashkent → Almaty → Moscow
+    var longestCoords = [
+      [28.6139, 77.2090], // New Delhi
+      [23.8103, 90.4125], // Dhaka
+      [41.2995, 69.2401], // Tashkent
+      [43.2220, 76.8512], // Almaty
+      [55.7558, 37.6173]  // Moscow
+    ];
+    L.polyline(longestCoords, { color: 'blue', weight: 4 })
+      .addTo(map)
+      .bindPopup("Longest: Delhi → Dhaka → Tashkent → Almaty → Moscow");
+
+    // Add markers for all cities
+    var cities = [
+      { name: "New Delhi", coords: [28.6139, 77.2090] },
+      { name: "Moscow", coords: [55.7558, 37.6173] },
+      { name: "Dhaka", coords: [23.8103, 90.4125] },
+      { name: "Tashkent", coords: [41.2995, 69.2401] },
+      { name: "Almaty", coords: [43.2220, 76.8512] }
+    ];
+    cities.forEach(function(city) {
+      L.marker(city.coords).addTo(map).bindPopup(city.name);
+    });
+  </script>
+</body>
+</html>
