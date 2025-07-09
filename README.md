@@ -100,27 +100,6 @@ Here path represented with blue colour shows a route from India to Russia wherea
 
 ---
 
-## 📁 Project Structure (Example)
-
-optimized-travel-route-planner/
-│
-├── src/
-│ ├── graph.cpp # Graph class & utilities
-│ ├── dijkstra.cpp # Dijkstra’s shortest path
-│ ├── bfs_dfs.cpp # BFS & DFS pathfinding
-│ └── main.cpp # Main program / UI
-│
-├── data/
-│ └── cities.csv # Nodes & routes dataset
-│
-├── web/
-│ └── index.html # Leaflet-based UI (optional)
-│
-└── README.md
-
-
----
-
 ## 🧠 Future Improvements
 
 - Live map interface with Leaflet or Google Maps
