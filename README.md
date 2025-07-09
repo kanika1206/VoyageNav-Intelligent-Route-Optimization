@@ -2,7 +2,7 @@
 
 This project helps travelers plan **optimal travel routes** between multiple locations using **graph data structures**. It simulates locations as nodes and routes (roads, trains, flights) as edges with weighted costs (e.g., distance, time, or expense). The application calculates the **shortest or most efficient path** between two or more locations according to user-defined criteria.
 
-![Route Planner Demo]()
+![Route Planner Demo](https://raw.githubusercontent.com/kanika1206/VoyageNav-Intelligent-Route-Optimization/refs/heads/main/map.png)
 
 Here path represented with blue colour shows a route from India to Russia whereas red colour shows the shortest route from India to Russia, which we are  optimizing with the graph algos.
 
